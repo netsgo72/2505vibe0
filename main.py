@@ -5,7 +5,10 @@ st.set_page_config(page_title="MBTI 직업 추천", page_icon="🧠")
 
 # 🌟 제목
 st.title("MBTI 직업 추천 앱 💼")
-st.subheader("당신의 MBTI에 어울리는 직업은? 😄")
+st.subheader("당신의 MBTI에 어울리는 직업은? ❄️🎈")
+
+# ❄️ 눈 내리는 효과
+st.snow()
 
 # 🔍 MBTI 목록
 mbti_types = [
@@ -37,7 +40,7 @@ mbti_recommendations = {
         ("초등교사 🏫", "아이들의 성장에 관심이 많고 인내심이 많아 교육 분야에 잘 맞습니다."),
         ("도서관 사서 📚", "조용하고 체계적인 환경에서 정보 정리와 관리 능력을 발휘할 수 있습니다.")
     ],
-    # 원하는 만큼 추가 가능
+    # 다른 MBTI도 여기에 추가 가능
 }
 
 # 🧩 사용자 입력
@@ -49,6 +52,9 @@ if selected_mbti:
     if selected_mbti in mbti_recommendations:
         for job, reason in mbti_recommendations[selected_mbti]:
             st.markdown(f"- **{job}**  \n  👉 {reason}")
+        
+        # 🎈 풍선 효과
+        st.balloons()
     else:
         st.warning("아직 이 MBTI에 대한 추천 정보가 준비되지 않았어요. 😢")
 
